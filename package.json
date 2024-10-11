@@ -20,8 +20,8 @@
     "typescript": "^5.6.3"
   },
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only --clear src/index.ts",
+    "start": "node --env-file=.env.example --env-file=.env dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only --clear --env-file=.env.example --env-file=.env src/index.ts",
     "build": "tsc -p tsconfig.build.json",
     "test": "ts-node-dev --transpile-only test/index.spec.ts"
   },

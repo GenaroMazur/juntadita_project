@@ -1,5 +1,4 @@
 import { Application } from "express";
-import { DefaultEnvironmentEnum } from "./enums/defaultEnvironment.enum";
 import { EnvironmentEnum } from "./enums/environment.enum";
 import { Server as HttpServer } from "node:http";
 import express from "express";
@@ -24,11 +23,7 @@ export default class Core {
   }
 
   public static getEnvironment(environment: EnvironmentEnum) {
-    const value =
-      process.env[environment] ||
-      DefaultEnvironmentEnum[
-        environment as keyof typeof DefaultEnvironmentEnum
-      ];
+    const value = process.env[environment];
 
     if (value === undefined) {
       throw new Error(`Environment variable ${environment} not set.`);
