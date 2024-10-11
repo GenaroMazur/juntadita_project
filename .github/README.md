@@ -1,6 +1,6 @@
 # Juntadita Project
 
-Juntadita Project es una aplicación diseñada para [descripción breve del propósito del proyecto].
+Juntadita Project es una api diseñada para poder facilitar la reunion entre amigos.
 
 ## Requisitos
 
