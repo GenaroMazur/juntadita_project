@@ -1,7 +1,7 @@
 import { Response } from "express";
-import { ControllerBuilder } from "../utils/controllerBuilder.util";
-import Core from "../Core";
-import { EnvironmentEnum } from "../enums/environment.enum";
+import { ControllerBuilder } from "../../../utils/controllerBuilder.util";
+import { EnvironmentEnum } from "../../../enums/environment.enum";
+import Core from "../../Core";
 
 export const indexController = ControllerBuilder(() => {
   return {

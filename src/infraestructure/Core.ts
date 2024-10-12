@@ -1,11 +1,11 @@
 import { Application } from "express";
-import { EnvironmentEnum } from "./enums/environment.enum";
+import { EnvironmentEnum } from "../enums/environment.enum";
 import { Server as HttpServer } from "node:http";
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
-import MongoConnection from "./database/MongoConnection.database";
+import MongoConnection from "../database/MongoConnection.database";
 
 export default class Core {
   private constructor() {}

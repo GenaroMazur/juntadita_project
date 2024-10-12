@@ -1,4 +1,4 @@
-import Core from "../Core";
+import Core from "../infraestructure/Core";
 
 export const closeProgram = async (arg?: unknown) => {
   await Core.instance.stop();

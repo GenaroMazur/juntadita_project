@@ -1,10 +1,10 @@
+import Core from "./infraestructure/Core";
+import MongoConnection from "./database/MongoConnection.database";
 import {
   notFoundController,
   serverErrorController,
-} from "./controllers/index.controller";
-import Core from "./Core";
-import MongoConnection from "./database/MongoConnection.database";
-import indexRouter from "./routes/index.routes";
+} from "./infraestructure/http/controllers/index.controller";
+import indexRouter from "./infraestructure/http/routes/index.routes";
 import { closeProgram } from "./utils/closeProgram.util";
 
 const mongoConnection = MongoConnection.instance;
