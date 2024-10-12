@@ -5,12 +5,14 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
+import MongoConnection from "./database/MongoConnection.database";
 
 export default class Core {
   private constructor() {}
 
   private http: HttpServer | null = null;
   public app: Application | null = null;
+  public mongoConnection: MongoConnection | null = null;
 
   private static _instance: Core;
   static get instance() {
@@ -36,9 +38,13 @@ export default class Core {
     return Core.getEnvironment(environment);
   }
 
-  public start() {
+  public async start() {
     const TCP_PORT = this.getEnvironment(EnvironmentEnum.TCP_PORT);
     const NODE_ENV = this.getEnvironment(EnvironmentEnum.NODE_ENV);
+
+    const MONGO_URI = this.getEnvironment(EnvironmentEnum.MONGO_URI);
+
+    await this.mongoConnection?.connect(MONGO_URI);
 
     this.app?.use(
       cors(),
@@ -56,8 +62,9 @@ export default class Core {
 
   public stop() {
     return new Promise<void>((resolve) => {
-      this.http?.close(() => {
+      this.http?.close(async () => {
         console.log("Server stopped");
+        await this.mongoConnection?.disconnect();
         resolve();
       });
     });
