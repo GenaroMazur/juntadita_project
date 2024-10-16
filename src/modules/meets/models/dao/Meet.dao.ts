@@ -9,7 +9,7 @@ const MeetSchema = new Schema<MeetEntity>(
     name: { type: String, required: true },
     groups: { type: [mongoose.Types.ObjectId], ref: "Group", default: [] },
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
 const Meet = mongoose.model<MeetEntity>("Meet", MeetSchema, "Meet");

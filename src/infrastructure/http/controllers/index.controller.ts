@@ -20,9 +20,10 @@ const NODE_ENV = Core.getEnvironment(EnvironmentEnum.NODE_ENV);
 
 export const serverErrorController = (
   err: unknown,
-  _: any,
+  _: unknown,
   res: Response,
-  __: any
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  __: unknown,
 ) => {
   console.error(err);
 

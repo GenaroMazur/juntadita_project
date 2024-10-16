@@ -51,7 +51,7 @@ export default class Core {
       helmet(),
       morgan(NODE_ENV === "development" ? "dev" : "common"),
       express.json(),
-      express.urlencoded({ extended: true })
+      express.urlencoded({ extended: true }),
     );
 
     this.http?.listen(TCP_PORT, () => {

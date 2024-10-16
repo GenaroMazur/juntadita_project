@@ -9,7 +9,7 @@ const UserSchema = new Schema<UserEntity>(
   },
   {
     versionKey: false,
-  }
+  },
 );
 
 const User = model<UserEntity>("User", UserSchema, "User");

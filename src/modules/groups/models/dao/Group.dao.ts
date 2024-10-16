@@ -7,7 +7,7 @@ const GroupSchema = new Schema<GroupEntity>(
     name: { type: String, required: true },
     users: { type: [mongoose.Types.ObjectId], ref: "User", default: [] },
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
 const Group = mongoose.model<GroupEntity>("Group", GroupSchema, "Group");

@@ -4,8 +4,8 @@ export function ControllerBuilder(
   controller: (
     request: Request,
     response: Response,
-    next: (err?: Error) => void
-  ) => unknown | Promise<unknown>
+    next: (err?: Error) => void,
+  ) => unknown | Promise<unknown>,
 ) {
   return async (request: Request, response: Response, next: NextFunction) => {
     try {
