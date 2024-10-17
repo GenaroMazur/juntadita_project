@@ -2,4 +2,7 @@ export enum EnvironmentEnum {
   TCP_PORT = "TCP_PORT",
   NODE_ENV = "NODE_ENV",
   MONGO_URI = "MONGO_URI",
+  REDIS_URI = "REDIS_URI",
+  JWT_SECRET = "JWT_SECRET",
+  JWT_EXPIRES_IN = "JWT_EXPIRES_IN",
 }
